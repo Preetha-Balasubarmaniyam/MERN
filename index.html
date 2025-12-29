@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3</title>
+    <title>To Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/assignment4.css">
 </head>
 <body>
-    <!--media based content-->
-    <h3>ADDED IMAGE VIA LOCAL STORAGE</h3>
-    <img src="./Copilot_20251217_134856.png" alt="yellow flower" width="100" height="100">
-    <h3>ADDED IMAGE VIA CDN</h3>
-    <img src="https://ik.imagekit.io/preetha/MERN/Copilot_20251217_135121.png" alt="purple flower"
-    width="100" height="100">
-    <h3>ADDED VIDEO VIA CDN</h3>
-    <video src="https://ik.imagekit.io/preetha/MERN/sample-video.mp4_updatedAt=1765957846446?updatedAt=1765958111674"
-        autoplay controls width="150" height="100"></video>
-        <!-- FORM CREATION-->   
-         <h3>CREATE A BASIC FORM</h3> 
-         <form>
-            <label for="name">Username:</label>
-            <input type="text" placeholder="Enter Username"><br>
-            <label for="password">Password:</label>
-            <input type="password" placeholder="Enter Password">
-            <br><button type="submit">Submit</button>
-         </form>
-         <h3>HTML ENTRIES</h3><br>
-         -COPYRIGHT: &copy;<br>
-         -AMPERSAND: &amp;<br>
-         -TRADEMARK: &trade;<br>
-         -REG TRADEMARK: &reg;<br>
-         -EURO: &euro;<br>
-         -POUND: &pound;<br>
+    <div class="w-[372px] h-[696px]
+     bg-[url(https://ik.imagekit.io/preetha/MERN/todolistbg.png_updatedAt=1700761069523)] space-y-5">
+        <h1 class="text-[40px] text-white text-center
+           font-bold">Todolist</h1>
+           <p class="text[12px] px-3 text-center">
+            Each day I will accomplish one thing on my todo list</p>
+       <div class="space-y-3">
+           <h3 class="text-[18px] font-extrabold">Read a Book</h3>
+           <p class="text-[14px] leading-snug">I dont think that the human race will survive the next thousand
+              years, unless we spread into space.There are too many accidents that can be fall life on 
+              a single planet.But I'm an optimist...
+           </p>
+         </div>  
+        <div class="px-3 flex flex-col items-center justify-center gap-2">
+            <button class="bg-[#ffa61d] px-5 py-2 border-2 border-gray-500">Start</button> 
+            <p class="text-[12px] text-white underline">Don't skip introduction</p>    
+        </div>
+         
+    </div> 
 </body>
 </html>
