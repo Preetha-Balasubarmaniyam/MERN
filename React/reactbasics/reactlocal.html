@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Local Storage</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script>
+        const headingElement= React.createElement("h1",null,"React using local storage");
+        const Root= ReactDOM.createRoot(document.getElementById("root"));
+        Root.render(headingElement);
+    </script>
+</body>
+</html>
