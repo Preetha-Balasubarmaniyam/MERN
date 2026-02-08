@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="max-w-[100%]">
+        <div class="w-[90%] mx-auto h-screen flex justify-center items-center">
+          <div class="border bg-[#e797b9] shadow-lg rounded-xl p-10 space-y-5">
+            <h3 class="text-white text-[30px] font-bold">Update Password</h3>
+    <form id="updatePasswordForm" class="flex flex-col gap-3">  
+        <label for="newPassword" class="text-white">NEW PASSWORD</label>
+        <input id="newPassword" placeholder="Create new password" type="password" class="rounded-lg border px-4 py-1">
+        <p id="newPasswordErrMsg" class="text-red-500"></p>
+        <label for="confirmPassword" class="text-white">CONFIRM PASSWORD</label>
+        <input id="confirmPassword" placeholder="Confirm password" type="password" class="rounded-lg border px-4 py-1">
+        <p id="confirmPasswordErrMsg" class="text-red-500"></p>
+        <div class="text-center"><button id="updateBtn" type="submit" class="bg-blue-500 px-5 py-3 rounded-lg text-white">Update</button></div>
+   </form>
+  </div>  
+</div>
+</div>
+<script>
+    var form = document.getElementById("updatePasswordForm");
+    var newPwd= document.getElementById("newPassword");
+    var confirmPwd = document.getElementById("confirmPassword");
+    var newPwdErrMsg = document.getElementById("newPasswordErrMsg");
+    var confirmPwdErrMsg = document.getElementById("confirmPasswordErrMsg");
+    form.addEventListener("submit",(e)=>{
+       // e.preventDefault();
+       newPwdErrMsg.textContent="";
+       confirmPwdErrMsg.textContent="";
+        console.log("event called");
+       if(newPwd.value =="" && confirmPwd.value =="")
+       {
+        newPwdErrMsg.textContent="Required*";
+        confirmPwdErrMsg.textContent="Required*"
+        e.preventDefault();
+       }
+       else if(newPwd.value==""){
+        newPwdErrMsg.textContent="Required*";
+        e.preventDefault();
+       }
+       else if(confirmPwd.value == "")
+       {
+        confirmPwdErrMsg.textContent="Required*"
+        e.preventDefault();
+       }
+       else if(newPwd.value != confirmPwd.value)
+       {
+        confirmPwdErrMsg.textContent="Passwords must be same";
+        e.preventDefault();
+       }
+       else{
+        //newPwdErrMsg.textContent="";
+        //confirmPwdErrMsg.textContent="";
+        alert("Password Changed Successfully");
+       }
+    
+    })
+    </script>
+</body>
+</html>
