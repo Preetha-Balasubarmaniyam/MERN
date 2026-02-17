@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!--FireBase SDK-->
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 <body>
 <div class="max-w-[100%]">
@@ -30,10 +34,10 @@
     var newPwdErrMsg = document.getElementById("newPasswordErrMsg");
     var confirmPwdErrMsg = document.getElementById("confirmPasswordErrMsg");
     form.addEventListener("submit",(e)=>{
-       // e.preventDefault();
+      // var isValid = true;
        newPwdErrMsg.textContent="";
        confirmPwdErrMsg.textContent="";
-        console.log("event called");
+       
        if(newPwd.value =="" && confirmPwd.value =="")
        {
         newPwdErrMsg.textContent="Required*";
@@ -55,12 +59,34 @@
         e.preventDefault();
        }
        else{
-        //newPwdErrMsg.textContent="";
-        //confirmPwdErrMsg.textContent="";
-        alert("Password Changed Successfully");
+        saveDB(newPwd.value);
+        e.preventDefault();
+        form.reset();
        }
     
-    })
+    });
+    const saveDB = (pass) =>
+    {
+        console.log("Save DB functn");
+        // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB1V3BdRISyNnswJDG43azmAf7asNKiKqc",
+    authDomain: "mern-db-d08d4.firebaseapp.com",
+    databaseURL: "https://mern-db-d08d4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "mern-db-d08d4",
+    storageBucket: "mern-db-d08d4.firebasestorage.app",
+    messagingSenderId: "183181994483",
+    appId: "1:183181994483:web:39f4c98d99ded116850a86"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database().ref("ReqForm");
+console.log(db);
+db.push({
+  Name: pass
+});
+    };
+        
+
     </script>
 </body>
 </html>
